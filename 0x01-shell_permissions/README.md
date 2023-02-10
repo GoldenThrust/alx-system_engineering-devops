@@ -81,7 +81,29 @@
 
  - Script to creates a directory called ``` my_dir ``` with permissions 751 in the working directory.
 
+
 ### [Change group](./13-change_group)
 
  - Script to changes the group owner to ``` school ``` for the file ``` hello ``` 
- 
+
+
+### [Owner and group](./100-change_owner_and_group)
+
+ - Script to changes the owner to ``` vincent ``` and the group owner to ``` staff ``` for all the files and directories in the working directory.
+
+
+### [Symbolic links](./101-symbolic_link_permissions)
+
+ - Script to changes the owner and the group owner of ``` _hello ``` to ``` vincent ``` and ``` staff ``` respectively.
+
+
+### [If only](./102-if_only)
+
+ - SCript to changes the owner of the file ``` hello ``` to ```  betty ``` only if it is owned by the user ``` guillaume ```.
+
+
+## [Star Wars](./103-Star_Wars)
+
+ - Script to play the StarWars IV episode in the terminal.
+
+
