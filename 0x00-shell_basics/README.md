@@ -2,43 +2,10 @@
 # 0x00 Shell Basics
 
 ## About
- -This directory contain project on Shell and Bash.
+ -This directory contain project on Shell.
 
 
 ## Task
-
-0. [Where am I?](#where am i?)
-
-1. [What's in there?](#what's in there?)
-
-2. [There is no place like home](#there is no place like home)
-
-3. [The long format](#the long formmat)
-
-4. [Hidden files](#hidden files)
-
-5. [I love numbers](#i love numbers)
-
-6. [Welcome](#welcome)
-
-7. [Betty in my first directory](#betty in my first directory)
-
-8. [Bye bye Betty](#bye bye betty)
-
-9. [Bye bye My first directory](#bye bye my first directory)
-
-10. [Back to the future](#back to the future)
-
-11. [Lists](#list)
-
-12. [File type](#file type)
-
-13. [We are symbols, and inhabit symbols](#we are symbols, and inhabit symbol)
-
-14. [Copy HTML files](#copy html files)
-
-
-
 
 
 ### [Where am I?](./0-current_working_directory)
@@ -128,4 +95,47 @@
 ### [Copy HTML files](./14-copy_html)
 
  - Script to copies all the HTML files from the current working directory to the parent of the working directory, but only copy files that did not exist in the parent of the working directory or were newer than the versions in the parent of the working directory.
+ 
+### [Let’s move](./100-lets_move)
+ 
+  - Script to moves all files beginning with an uppercase letter to the directory ``` /tmp/u ```.
+ 
+### [Clean Emacs](./101-clean_emacs)
 
+ - Script to deletes all files in the current working directory that end with the character ``` ~ ```.
+
+### [Tree](./102-tree)
+
+  - Script to creates the directories welcome/, welcome/to/ and welcome/to/school in the current directory.
+
+### [Life is a series of commas, not periods](./103-commas)
+
+ - Script to lists all the files and directories of the current directory, separated by commas (,).
+ 
+### [File type: School](./school.mgc)
+
+  - Script to create a magic file school.mgc that can be used with the command file to detect School data files. School data files always contain the string SCHOOL at offset 0.  
+  
+<details><summary>Script</summary>
+
+<p>
+
+  ```
+  
+  create a file "school".
+  open the file and write the script
+  "0 string SCHOOL school data
+  !:mime School"
+  inside it.
+  save and close the file.
+  compile the file to magic using the command
+  "
+  file -C -m school
+  "
+  the file school will be compile to 
+  "school.mgc" :+1:
+  
+  ```
+  
+</p>
+</details>
