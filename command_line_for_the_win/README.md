@@ -11,8 +11,8 @@
 
 ```
      sftp> put "C:\Users\HP ZBOOK X360 G5\Documents\command_line_for_the_win\0-first_9_tasks.png"
+     sftp> put "C:\Users\HP ZBOOK X360 G5\Documents\command_line_for_the_win\1-first_9_tasks.png"
      sftp> put "C:\Users\HP ZBOOK X360 G5\Documents\command_line_for_the_win\2-first_9_tasks.png"
-     sftp> put "C:\Users\HP ZBOOK X360 G5\Documents\command_line_for_the_win\3-first_9_tasks.png"
 ```
 
 </p>
