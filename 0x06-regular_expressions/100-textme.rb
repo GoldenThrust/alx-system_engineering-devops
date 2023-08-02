@@ -1,3 +1,3 @@
 #!/usr/bin/env ruby
-regex=/hbt+n/
-puts ARGV[0].scan(regex).join
+regex=/\[from:(.*?)] \[to:(.*?)] \[flags:(.*?)]/
+puts ARGV[0].scan(regex).join(",")
