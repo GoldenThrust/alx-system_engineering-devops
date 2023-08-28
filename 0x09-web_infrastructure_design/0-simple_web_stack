@@ -1,0 +1,48 @@
+https://imgur.com/dfjNwmI
+
+1. What is a server?
+
+A server is a computer system that's configured to provide services to other computers.
+A server can be an hardware or software and server always runs on the operating system(OS).
+
+2. What is the role of the domain name
+
+The domain name helps users locate and access the website easily
+By mapping website name to it ip address.
+
+3. What type of DNS record www is in www.foobar.com
+www is CNAME (Canonical Name) DNS record and www.foobar.com is A (address) record.
+
+4. What is the role of the web server?
+
+The role of web server is to serve static webpage.
+
+5. What is the role of the application server
+
+The role of application server is to process dynamic content.
+
+6. What is the role of the database
+
+The role of a database is to store and manage structured data
+
+7. What is the server using to communicate with the computer of the user requesting the website
+
+The server is comunicating over TCP/IP network
+
+what the issues are with this infrastructure:
+
+1. SPOF.
+
+Since all services are hosted on a single server, if that server fails, the entire website becomes inaccessible.
+
+2. Downtime when maintenance needed (like deploying new code web server needs to be restarted)
+
+When a new code is deploy the website will be temporarily down and the web serve needs to be restarted.
+
+3. Cannot scale if too much incoming traffic
+
+Infrastructure cannot handle an increase in traffic since it's hosted on a single serve
+
+
+
+Image link - https://imgur.com/dfjNwmI

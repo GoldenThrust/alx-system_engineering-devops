@@ -1,0 +1,31 @@
+https://imgur.com/o9tpwEU
+
+1. For every additional element, why you are adding it
+
+To minimise issue like SPOF
+
+2. What distribution algorithm your load balancer is configured with and how it works
+
+The load balancer is configured with a Round Robin distribution algorithm. This algorithm sends incoming requests to each server in a cyclic manner.
+
+3. Is your load-balancer enabling an Active-Active or Active-Passive setup, explain the difference between both
+The load balancer enables an Active-Active setup where all servers are actively serving traffic, sharing the load evenly unlike the active-Passive setup.
+
+4. How a database Primary-Replica (Master-Slave) cluster works
+
+The database Primary-Replica cluster provides data redundancy, high availability, and load distribution for the database.
+
+5. What is the difference between the Primary node and the Replica node in regard to the application
+The primary database node handles writes and updates, while the replicate  nodes replicate data fro
+m the primary node to serve read requests.
+
+You must be able to explain what the issues are with this infrastructure:
+1. Where are SPOF
+
+Although the load balancer increases redundancy, if it fails, the entire system can become inaccessible.
+
+2. Security issues (no firewall, no HTTPS)
+
+Lack of firewall and HTTPS poses security risks, potentially exposing sensitive data and allowing unauthorized access.
+3. No monitoring
+Without proper monitoring, it's difficult to identify and address issues

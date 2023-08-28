@@ -1,0 +1,32 @@
+https://imgur.com/0aH6iFb
+
+
+1. For every additional element, why you are adding it
+To secure data be transmitted
+
+2. What are firewalls for
+
+Protect servers by filtering incoming/outgoing traffic, enforcing security policies.
+
+3. Why is the traffic served over HTTPS
+
+To secures data in transit between users and servers,and prevents data interception and tampering.
+
+4. What monitoring is used for
+
+To monitors server health, performance, security, resource usage.
+
+5. How the monitoring tool is collecting data
+
+6. Explain what to do if you want to monitor your web server QPS
+Collects metrics, logs, and events for analysis in monitoring tools.
+
+You must be able to explain what the issues are with this infrastructure:
+1. Why terminating SSL at the load balancer level is an issue
+SSL termination can expose decrypted data internally, reducing security.
+
+2. Why having only one MySQL server capable of accepting writes is an issue
+Single point of failure for write operation
+
+3. Why having servers with all the same components (database, web server and application server) might be a problem
+Homogeneous components can lead to a common vulnerability affecting all servers.
