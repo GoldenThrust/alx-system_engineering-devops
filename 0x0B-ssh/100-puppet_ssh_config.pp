@@ -2,13 +2,13 @@
 $con_file = '/etc/ssh/ssh_config'
 
 file_line {'Declare identity file':
-  path   => $con_file,
-  line   => '    IdentityFile ~/.ssh/school',
   ensure => 'present',
+  line   => '    IdentityFile ~/.ssh/school',
+  path   => $con_file,
 }
 
-file_line {'Turn off passwd auth',
+file_line {'Turn off passwd auth':
+  ensure => 'present',
   path   => $con_file,
   line   => '    PasswordAuthentication no',
-  ensure => 'present',
 }
