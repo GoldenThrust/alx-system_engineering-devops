@@ -10,6 +10,7 @@ ufw allow 'Nginx Http'
 echo 'Hello World!' > /var/www/html/index.html
 
 sed -i '/server_name _;/a\
+\
 	rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-enabled/default
 
 service nginx start
