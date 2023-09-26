@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Install nginx web server
+
+sed -i '/server_name _;/a\
+	rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;\
+\
+	error_page 404 /404.html;\
+	location = /404.html {\
+		root /var/www/html;\
+		internal;\
+	}' test
+
