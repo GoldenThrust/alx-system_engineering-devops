@@ -8,7 +8,7 @@ exec { 'install_nginx':
 
 # Update the system package cache
 exec { 'update_package_cache':
-  command => 'apt-get -y update',
+  command     => 'apt-get -y update',
   refreshonly => true,
 }
 
@@ -55,7 +55,7 @@ server {
         location / {
                 # First attempt to serve request as file, then
                 # as directory, then fall back to displaying a 404.
-                try_files $uri $uri/ =404;
+                try_files ${uri} ${uri}/ =404;
         }
 }",
   require => Exec['install_nginx'],  # Make sure Nginx is installed before configuring Nginx
