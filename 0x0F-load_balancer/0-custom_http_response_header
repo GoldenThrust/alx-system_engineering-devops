@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Install nginx web server
+
+apt-get -y update
+apt-get -y install nginx
+ufw allow 'Nginx Http'
+echo 'Hello World!' > /var/www/html/index.html
+echo "Ceci n'est pas une page" > /var/www/html/404.html
+sed -i '/server_name _;/a\
+	rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;\
+\
+	error_page 404 /404.html;\
+	location = /404.html {\
+		root /var/www/html;\
+		internal;\
+	}\
+	add_header X-Served-By $HOSTNAME;' /etc/nginx/sites-enabled/default
+
+service nginx start
+service nginx restart
