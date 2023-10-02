@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# configure load balancing
+
+apt-get -y upgrade
+apt-get -y update
+
+apt-get -y install --no-install-recommends software-properties-common
+add-apt-repository -y ppa:vbernat/haproxy-2.8
+
+apt-get -y install haproxy
+
+echo "ENABLED=1" >> /etc/default/haproxy
+
+cp -a /etc/haproxy/haproxy.cfg{,.orig}
+
+echo "\
+frontend www
+	bind :80
+	mode http
+	defaut_backend webservers
+
+backend webservers
+	balance roundrobin
+	server 302489-web-01 54.157.184.108:80 check
+	server 302489-web-02 52.3.248.81:80 check
+" >> /etc/haproxy/haproxy.cfg
+
+service haproxy restart
