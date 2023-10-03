@@ -17,7 +17,7 @@ echo "\
 frontend www
 	bind :80
 	mode http
-	defaut_backend webservers
+	default_backend webservers
 
 backend webservers
 	balance roundrobin
