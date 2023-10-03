@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # Install nginx web server
 
+# shellcheck disable=SC2154
+
 apt-get -y update
 apt-get -y install nginx
 ufw allow 'Nginx Http'
