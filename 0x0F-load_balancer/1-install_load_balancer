@@ -15,7 +15,7 @@ cp -a /etc/haproxy/haproxy.cfg{,.orig}
 
 echo "\
 frontend www
-	bind :80
+	bind *:80
 	mode http
 	default_backend webservers
 
