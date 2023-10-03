@@ -20,7 +20,7 @@ exec { 'add_header':
       \n\tlocation = /404.html {\
       \n\t        root /var/www/html;\
       \n\t        internal;\
-      \n  }\
+      \n\t}\
       \n\tadd_header X-Served-By \$HOSTNAME;" /etc/nginx/sites-enabled/default',
   require  => Exec['install_nginx'],
 }
