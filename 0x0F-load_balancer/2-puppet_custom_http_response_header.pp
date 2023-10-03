@@ -14,13 +14,19 @@ exec { 'install_nginx':
 
 exec { 'add_header':
   provider => shell,
-  command  => 'sudo sed -i "/listen 80 default_server;/a    add_header X-Served-By \$HOSTNAME;" /etc/nginx/sites-enabled/default',
+  command  => 'sed -i "/server_name _;/a
+      \n\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;\
+       \n\terror_page 404 /404.html;\
+      \n\tlocation = /404.html {\
+      \n\t        root /var/www/html;\
+      \n\t        internal;\
+      \n  }\
+      \n\tadd_header X-Served-By \$HOSTNAME;" /etc/nginx/sites-enabled/default',
   require  => Exec['install_nginx'],
-  before   => Exec['restart_service'],
 }
 
 exec { 'restart_service':
   provider => shell,
-  command  => 'service nginx restart',
+  command  => 'service nginx start; service nginx restart',
   require  => Exec['add_header'],
 }
