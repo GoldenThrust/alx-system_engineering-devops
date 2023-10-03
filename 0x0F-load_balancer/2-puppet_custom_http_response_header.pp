@@ -9,18 +9,18 @@ exec { 'update_package_cache':
 exec { 'install_nginx':
   provider => shell,
   command  => 'sudo apt-get -y install nginx',
+  require  => Exec['update_package_cache'],
 }
 
 exec { 'add_header':
   provider => shell,
   command  => 'sudo sed -i "/listen 80 default_server;/a add_header X-Served-By $HOSTNAME;" /etc/nginx/sites-enabled/default',
   require  => Exec['install_nginx'],
-  before   => Exec['restart service'],
+  before   => Exec['restart_service'],
 }
 
-exec { 'restart service':
+exec { 'restart_service':
   provider => shell,
-  command  => 'servive nginx restart',
-  require  => Exec['install_nginx'],
+  command  => 'service nginx restart',
+  require  => Exec['add_header'],
 }
-
