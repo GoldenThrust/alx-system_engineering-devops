@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Configure domain zone
+
+dig_d () {
+   dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | sed -r "s/$2.$1./$2/g" | awk -F" " 'NR==2 { print "The subdomain " $1 " is a " $4 " record and points to " $5 }'
+}
+
+if [ "$#" -eq 2 ]
+then
+    dig_d "$1" "$2"
+else
+    dig_d "$1" "www"
+    dig_d "$1" "lb-01"
+    dig_d "$1" "web-01"
+    dig_d "$1" "web-02"
+fi
+
