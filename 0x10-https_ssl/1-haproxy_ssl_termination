@@ -33,13 +33,15 @@ defaults
         errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
 
-frontend www
+frontend www-http
         bind *:80
         mode http
+        http-request set-header X-Forwarded-Proto http
         default_backend webservers
 
 frontend www-https
         bind *:443 ssl crt /etc/letsencrypt/archive/www.beyondimagination.tech/www.beyondimagination.tech.pem
+        http-request set-header X-Forwarded-Proto https
         default_backend webservers
 
 backend webservers
