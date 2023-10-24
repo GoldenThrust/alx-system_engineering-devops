@@ -8,7 +8,7 @@ import sys
 if __name__ == "__main__":
     user_id = sys.argv[1]
     url = 'https://jsonplaceholder.typicode.com'
-    users_resp = rq.get("{}/users/{}".format(url, user_id))
+    users_resp = rq.get("{}/users".format(url))
 
     if users_resp.status_code == 200:
         users_data = users_resp.json()
