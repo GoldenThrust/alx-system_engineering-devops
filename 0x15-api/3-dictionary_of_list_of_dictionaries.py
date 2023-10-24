@@ -16,7 +16,7 @@ if __name__ == "__main__":
             json.dump({
                 users.get("id"): [{
                     "task": task.get("title"),
-                    "completed": users.get("completed"),
+                    "completed": task.get("completed"),
                     "username": users.get("username")}
                     for task in rq.get("{}/todos?userId={}"
                                        .format(url,
