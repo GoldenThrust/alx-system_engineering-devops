@@ -6,7 +6,6 @@ import sys
 
 
 if __name__ == "__main__":
-    user_id = sys.argv[1]
     url = 'https://jsonplaceholder.typicode.com'
     users_resp = rq.get("{}/users".format(url))
 
