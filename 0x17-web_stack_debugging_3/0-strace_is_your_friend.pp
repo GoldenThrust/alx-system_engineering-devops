@@ -5,6 +5,5 @@ exec { 'Fix Wordpress Website':
   provider => shell,
   path     => '/bin:/usr/bin',
   onlyif   => '/usr/bin/find /var/www/html -type f -name "*.php" -exec grep -q ".phpp" {} \;',
-  require  => Package['sed'],
 }
 
