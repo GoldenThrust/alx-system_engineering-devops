@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Reload Gunicorn instance
+
+pkill -HUP gunicorn
