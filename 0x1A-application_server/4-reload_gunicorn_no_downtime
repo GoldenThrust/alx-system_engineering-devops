@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
-# Reload Gunicorn instance
+# Reload Gunicorn instance Gracefully
 
-pkill -HUP gunicorn
+# pkill -HUP gunicorn
+pgrep gunicorn | xarg kill -HUP
