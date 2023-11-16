@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 # Reload Gunicorn instance Gracefully
+sudo pkill -HUP gunicorn
 sudo systemctl reload gunicorn
+sudo service gunicorn restart
